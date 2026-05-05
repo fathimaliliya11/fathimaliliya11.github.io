@@ -341,6 +341,12 @@ nav {
 }
 
 /* ── PROJECT CARDS ── */
+.proj-cards {
+  display: grid !important;
+  grid-template-columns: repeat(3, 1fr) !important;
+  gap: 1.2rem;
+}
+
 .proj-card:hover { border-color: rgba(198, 120, 221, 0.4); }
 .proj-card:hover::before {
   background: linear-gradient(90deg, var(--accent2), var(--accent));
@@ -449,4 +455,12 @@ footer {
 @media (max-width: 520px) {
   .cards { grid-template-columns: 1fr; }
   #skills .cards { grid-template-columns: 1fr 1fr; }
+}
+
+/* proj-cards responsive */
+@media (max-width: 720px) {
+  .proj-cards { grid-template-columns: repeat(2, 1fr) !important; }
+}
+@media (max-width: 480px) {
+  .proj-cards { grid-template-columns: 1fr !important; }
 }
