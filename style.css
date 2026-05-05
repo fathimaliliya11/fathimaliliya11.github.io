@@ -226,16 +226,20 @@ nav {
 
 /* ── CARDS (shared) ── */
 .cards {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
+}
+
+/* Skills — 4 columns */
+#skills .cards {
+  grid-template-columns: repeat(4, 1fr);
 }
 
 .card {
   background: var(--surface);
   padding: 1.5rem;
   border-radius: 12px;
-  flex: 1 1 220px;
   border: 1px solid var(--border);
   transition: all 0.25s;
   position: relative;
@@ -431,8 +435,8 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .cards { flex-direction: column; }
-  .card { flex: unset; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  #skills .cards { grid-template-columns: 1fr 1fr; }
 }
 
 @media (max-width: 460px) {
@@ -440,4 +444,9 @@ footer {
   .nav-links { gap: 0.8rem; }
   .hero h1 { font-size: 2.2rem; }
   .section-title { font-size: 1.6rem; }
+}
+
+@media (max-width: 520px) {
+  .cards { grid-template-columns: 1fr; }
+  #skills .cards { grid-template-columns: 1fr 1fr; }
 }
